@@ -4,6 +4,7 @@
   "testFolders": [],
   "bcptTestFolders": [],
   "environment":[
-    "FR_Sandbox"
+    "FR_Sandbox",
+    "US_Sandbox",
   ]
 }
