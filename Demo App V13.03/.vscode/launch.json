@@ -1,5 +1,55 @@
 {
-    "version": "0.2.0",
+    "version": "0.0.2.0",
     "configurations": [
+        {
+            "name": "Cloud Sandbox",
+            "type": "al",
+            "request": "launch",
+            "tenant": "34aa9914-dc76-4f6c-bac4-9492ff242f9e",
+            "environmentType": "Sandbox",
+            "environmentName": "US_Sandbox",
+            "startupObjectId": 22,
+            "breakOnError": true,
+            "breakOnRecordWrite": false,
+            "launchBrowser": true,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10
+        },
+         {
+            "name": "Local Server",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://localhost:8080/",
+            "serverInstance": "BC210",
+            "authentication": "Windows",
+            "startupObjectId": 50100,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default",
+            "schemaUpdateMode": "ForceSync"
+        },
+        {
+            "name": "snapshotInitialize: MyServer",
+            "type": "al",
+            "request": "snapshotInitialize",
+            "environmentType": "OnPrem",
+            "server": "http://localhost:8080/",
+            "serverInstance": "BC210",
+            "authentication": "Windows",
+            "breakOnNext": "WebClient",
+            "executionContext": "DebugAndProfile",
+            "tenant": "default",
+// Open CustomSettings file from STA app to enable snapshot debugging or enable it during setup process 
+//Execute command : Intialise snapshot debugging
+// make sure the user has D365 SNAPSHOT DEBUG permission set
+// Finish snapshot debugging ... at the end
+// On the bottom bar, click on the orange coloured icon to consult the content of the downloaded snapshot
+      }
     ]
 }
